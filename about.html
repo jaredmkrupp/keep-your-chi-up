@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About & Contact — Keep your Chi Up</title>
+  <meta name="description" content="About Jared Krupp, RN and holistic practitioner, and how to get in touch or work together." />
+
+  <!-- Favicon (uses the logo graphic; falls back gracefully if not present) -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Fonts: Inter for body (Optima for headings comes from the system stack in styles.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header / nav ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Keep your Chi Up — home">
+        <img
+          class="brand__logo"
+          src="assets/logo.png"
+          alt="Keep your Chi Up logo — a yin-yang inside a sunburst"
+          width="60" height="60"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <span class="brand__logo-fallback" style="display:none;" aria-hidden="true">KYC</span>
+        <span class="brand__text">
+          <span class="brand__name">Keep your Chi Up</span>
+          <span class="brand__sub">With Jared Krupp</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About / Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Bio ===================== -->
+    <section class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <h1 class="section__title" id="about-heading">About Jared</h1>
+
+        <div class="bio">
+          <!-- Headshot; if assets/headshot.jpg is missing, the placeholder box shows instead -->
+          <img
+            class="bio__photo"
+            src="assets/headshot.jpg"
+            alt="Portrait of Jared Krupp, registered nurse and holistic practitioner"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="bio__photo-fallback" style="display:none;" aria-hidden="true">
+            Headshot coming soon
+          </div>
+
+          <div class="bio__body">
+            <!-- ===================================================== -->
+            <!-- TODO(Jared): Paste your bio copy below, replacing the -->
+            <!-- placeholder <div> on the next line.                   -->
+            <!-- ===================================================== -->
+            <div class="bio-placeholder">
+              [Bio coming soon]
+            </div>
+            <!-- ===== end bio ===== -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section" aria-labelledby="contact-heading" style="padding-top:0;">
+      <div class="container">
+        <h2 class="section__title" id="contact-heading">Get in touch</h2>
+        <p class="section__intro">
+          Ready to talk, or just have a question? Here's how to reach me.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="label">Email</span>
+            <a href="mailto:Jaredmkrupp@gmail.com">Jaredmkrupp@gmail.com</a>
+          </li>
+          <li>
+            <span class="label">Instagram</span>
+            <a href="https://instagram.com/Jared_krupp">@Jared_krupp</a>
+          </li>
+          <li>
+            <span class="label">Work with me</span>
+            <a href="https://buy.stripe.com/6oU00j5HO4xr3jl9XQ3ks00">
+              Book Embodied Autonomy — 6-week coaching
+            </a>
+          </li>
+        </ul>
+
+        <div class="hero__actions" style="margin-top:2rem;">
+          <a class="btn btn--primary"
+             href="https://buy.stripe.com/6oU00j5HO4xr3jl9XQ3ks00">
+            Work with me
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer__links" aria-label="Contact">
+        <a href="mailto:Jaredmkrupp@gmail.com">Jaredmkrupp@gmail.com</a>
+        <a href="https://instagram.com/Jared_krupp">Instagram @Jared_krupp</a>
+      </nav>
+      <p class="footer__copy">© 2026 Keep your Chi Up · With Jared Krupp</p>
+    </div>
+  </footer>
+</body>
+</html>

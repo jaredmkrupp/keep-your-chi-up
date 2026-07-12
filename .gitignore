@@ -1,0 +1,4 @@
+.DS_Store
+
+# Local preview tooling (not part of the deployed site)
+.claude/

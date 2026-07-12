@@ -3,79 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-    }
+  <title>Keep your Chi Up — With Jared Krupp</title>
+  <meta name="description" content="Holistic coaching with Jared Krupp, RN. Compassionate, direct support for lasting change — a free Skool community and 1-on-1 coaching." />
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Favicon (uses the logo graphic; falls back gracefully if not present) -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 
-    html, body {
-      height: 100%;
-    }
+  <!-- Fonts: Inter for body (Optima for headings comes from the system stack in styles.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1.5rem;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%);
-      color: #f1f5f9;
-      text-align: center;
-    }
-
-    main {
-      max-width: 32rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-    }
-
-    p {
-      margin-top: 1rem;
-      font-size: clamp(1rem, 2.5vw, 1.15rem);
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
-      margin: 2rem 0.35rem 0;
-      border-radius: 50%;
-      background: #64748b;
-      animation: pulse 1.4s ease-in-out infinite;
-    }
-
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(-0.25rem); }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Coming soon</h1>
-    <p>We're putting the finishing touches on something new. Check back shortly.</p>
-    <div aria-hidden="true">
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header / nav ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Keep your Chi Up — home">
+        <!-- Logo image; if assets/logo.png is missing, the text fallback shows instead -->
+        <img
+          class="brand__logo"
+          src="assets/logo.png"
+          alt="Keep your Chi Up logo — a yin-yang inside a sunburst"
+          width="60" height="60"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <span class="brand__logo-fallback" style="display:none;" aria-hidden="true">KYC</span>
+        <span class="brand__text">
+          <span class="brand__name">Keep your Chi Up</span>
+          <span class="brand__sub">With Jared Krupp</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About / Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero">
+      <div class="container">
+        <h1>Real change starts when you stop outsourcing your health.</h1>
+        <p class="hero__lead">
+          I'm Jared Krupp — a registered nurse and holistic practitioner. I've
+          watched the conventional system manage people's symptoms while their
+          lives quietly fall apart. I honor everything you've carried to get
+          here. And I'll tell you the truth: the power to change is already
+          yours. My work is helping you use it.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#embodied-autonomy">Work with me</a>
+          <a class="btn btn--outline" href="#community">Start free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Offers ===================== -->
+    <section class="section" aria-labelledby="offers-heading">
+      <div class="container">
+        <h2 class="section__title" id="offers-heading">Two ways to begin</h2>
+        <p class="section__intro">
+          Start where you are. Go as deep as you're ready to go.
+        </p>
+
+        <div class="offers">
+          <!-- Offer 1: Free Skool community -->
+          <article class="card" id="community">
+            <span class="card__eyebrow">Community</span>
+            <span class="card__price">Free</span>
+            <h3>Keep Your Chi Up Skool Community</h3>
+            <p>
+              This is the front door. A free space to get familiar with how I
+              think, how I work, and what a genuinely holistic approach asks of
+              you. No pressure, no pitch — just a place to start paying attention
+              to your own health before you commit to anything deeper.
+            </p>
+            <div class="card__actions">
+              <!-- TODO(Jared): replace href="#" with the real Skool community URL -->
+              <a class="btn btn--primary" href="#" aria-describedby="skool-todo">
+                Join the community
+              </a>
+              <small class="todo-note" id="skool-todo">
+                TODO: Jared — paste the real Skool URL here (currently links to “#”).
+              </small>
+            </div>
+          </article>
+
+          <!-- Offer 2: Embodied Autonomy (paid 1-on-1) -->
+          <article class="card" id="embodied-autonomy">
+            <span class="card__eyebrow">1-on-1 Coaching</span>
+            <span class="card__price">6-week container</span>
+            <h3>Embodied Autonomy</h3>
+            <p>
+              A focused, one-on-one, six-week coaching container. This is where
+              we do the honest work — together, at a high standard, without
+              beating around the bush. It's for the person who is done waiting to
+              be rescued and ready to take real ownership of their health and
+              their life.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary"
+                 href="https://buy.stripe.com/6oU00j5HO4xr3jl9XQ3ks00">
+                Work with me
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer__links" aria-label="Contact">
+        <a href="mailto:Jaredmkrupp@gmail.com">Jaredmkrupp@gmail.com</a>
+        <a href="https://instagram.com/Jared_krupp">Instagram @Jared_krupp</a>
+      </nav>
+      <p class="footer__copy">© 2026 Keep your Chi Up · With Jared Krupp</p>
+    </div>
+  </footer>
 </body>
 </html>

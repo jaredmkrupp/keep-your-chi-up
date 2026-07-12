@@ -1,0 +1,507 @@
+/* ============================================================
+   Keep your Chi Up — shared styles
+   Palette:
+     #374f2f  dark green  (primary / headings / text / footer)
+     #f8d3c5  peach       (accents / CTA buttons / highlights)
+     #dde6d5  sage        (backgrounds / secondary cards)
+   Fonts:
+     Headings — Optima system stack (humanist sans, warm)
+     Body     — Inter (Google Fonts)
+   ============================================================ */
+
+:root {
+  --green: #374f2f;
+  --green-dark: #2a3d24;
+  --peach: #f8d3c5;
+  --peach-dark: #f3b7a1;
+  --sage: #dde6d5;
+  --sage-light: #eef2ea;
+  --paper: #fbfcfa;
+  --ink: #2b3626;
+
+  --font-head: "Optima", Candara, "Gill Sans", "Gill Sans MT", "Segoe UI",
+    system-ui, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  --maxw: 1100px;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(55, 79, 47, 0.10);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  color: var(--green);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Accessible focus states (visible on all interactive elements) ---- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--green);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ============================================================
+   Header / nav
+   ============================================================ */
+.site-header {
+  background: var(--sage);
+  border-bottom: 1px solid rgba(55, 79, 47, 0.12);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--green);
+}
+
+.brand__logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Text fallback shown if the logo image is missing */
+.brand__logo-fallback {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  color: var(--peach);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand__name {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.brand__sub {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.75;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: 500;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.site-nav a:hover {
+  background: rgba(55, 79, 47, 0.10);
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--green);
+  color: var(--sage);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--peach);
+  color: var(--green);
+  box-shadow: 0 6px 16px rgba(243, 183, 161, 0.5);
+}
+.btn--primary:hover {
+  background: var(--peach-dark);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--green);
+  border-color: var(--green);
+}
+.btn--outline:hover {
+  background: var(--green);
+  color: var(--sage);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  background: linear-gradient(180deg, var(--sage) 0%, var(--paper) 100%);
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  max-width: 18ch;
+}
+
+.hero__lead {
+  margin-top: 1.25rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: var(--ink);
+  max-width: 60ch;
+}
+
+.hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ============================================================
+   Sections & offer cards
+   ============================================================ */
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.section__title {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.section__intro {
+  color: var(--ink);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.card {
+  background: var(--sage-light);
+  border: 1px solid rgba(55, 79, 47, 0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--green);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.card__price {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--peach);
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--ink);
+  flex-grow: 1;
+}
+
+.card__actions {
+  margin-top: 1.5rem;
+}
+
+.todo-note {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #8a5a3c;
+  background: #fbeee7;
+  border: 1px dashed var(--peach-dark);
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+}
+
+/* ============================================================
+   About page — bio + contact
+   ============================================================ */
+.bio {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.bio__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+/* Placeholder box if headshot image is missing */
+.bio__photo-fallback {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  background: var(--sage);
+  border: 2px dashed var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--green);
+  font-family: var(--font-head);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.bio-placeholder {
+  background: var(--sage-light);
+  border: 1px dashed rgba(55, 79, 47, 0.4);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: var(--green);
+  font-style: italic;
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 40rem;
+}
+
+.contact-list li {
+  background: var(--sage-light);
+  border: 1px solid rgba(55, 79, 47, 0.12);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-list .label {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--green);
+  opacity: 0.8;
+}
+
+.contact-list a {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  background: var(--green);
+  color: var(--sage);
+  margin-top: 2rem;
+}
+
+.site-footer .container {
+  padding-block: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer a {
+  color: var(--peach);
+  text-decoration: none;
+  font-weight: 500;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer__copy {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .bio {
+    grid-template-columns: 220px 1fr;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .offers {
+    grid-template-columns: 1fr;
+  }
+  .bio {
+    grid-template-columns: 1fr;
+  }
+  .bio__photo,
+  .bio__photo-fallback {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header .container {
+    justify-content: center;
+    text-align: center;
+  }
+  .site-nav ul {
+    justify-content: center;
+  }
+  .brand__name {
+    font-size: 1.2rem;
+  }
+  .site-footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn {
+    transition: none;
+  }
+}
