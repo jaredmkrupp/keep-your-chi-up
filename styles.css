@@ -1,32 +1,30 @@
 /* ============================================================
-   Keep your Chi Up — shared styles
-   Palette:
-     #374f2f  dark green  (primary / headings / text / footer)
-     #f8d3c5  peach       (accents / CTA buttons / highlights)
-     #dde6d5  sage        (backgrounds / secondary cards)
-   Fonts:
-     Headings — Optima system stack (humanist sans, warm)
-     Body     — Inter (Google Fonts)
+   Keep Your Chi Up — shared styles
+   Palette (exact):
+     #374f2f  forest green  (primary text / headings / accents / footer)
+     #f5f5dc  beige         (main page background)
+     #dde6d5  light sage    (section backgrounds / cards / dividers)
+   Fonts (Google Fonts):
+     Headings — Fraunces (warm serif)
+     Body     — Nunito Sans (clean, grounded sans)
+   Nature motifs: subtle CSS/SVG line work only — no photographs.
    ============================================================ */
 
 :root {
   --green: #374f2f;
-  --green-dark: #2a3d24;
-  --peach: #f8d3c5;
-  --peach-dark: #f3b7a1;
+  --green-dark: #29391f;   /* derived — button hover only */
+  --beige: #f5f5dc;
   --sage: #dde6d5;
-  --sage-light: #eef2ea;
-  --paper: #fbfcfa;
-  --ink: #2b3626;
+  --sage-deep: #cdd9c2;    /* derived — card borders / dividers */
+  --ink: #374f2f;
 
-  --font-head: "Optima", Candara, "Gill Sans", "Gill Sans MT", "Segoe UI",
-    system-ui, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  --font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
 
-  --maxw: 1100px;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(55, 79, 47, 0.10);
+  --maxw: 1080px;
+  --radius: 16px;
+  --shadow: 0 12px 34px rgba(55, 79, 47, 0.10);
 }
 
 * {
@@ -42,8 +40,8 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--paper);
-  line-height: 1.65;
+  background: var(--beige);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -52,12 +50,11 @@ h1, h2, h3 {
   font-family: var(--font-head);
   color: var(--green);
   line-height: 1.15;
-  letter-spacing: 0.01em;
   font-weight: 600;
 }
 
 p {
-  max-width: 65ch;
+  max-width: 68ch;
 }
 
 a {
@@ -69,7 +66,11 @@ img {
   display: block;
 }
 
-/* ---- Accessible focus states (visible on all interactive elements) ---- */
+strong {
+  font-weight: 700;
+}
+
+/* ---- Accessible focus states ---- */
 a:focus-visible,
 button:focus-visible,
 .btn:focus-visible {
@@ -91,7 +92,7 @@ button:focus-visible,
   left: -999px;
   top: 0;
   background: var(--green);
-  color: #fff;
+  color: var(--beige);
   padding: 0.6rem 1rem;
   z-index: 100;
   border-radius: 0 0 8px 0;
@@ -105,7 +106,9 @@ button:focus-visible,
    ============================================================ */
 .site-header {
   background: var(--sage);
-  border-bottom: 1px solid rgba(55, 79, 47, 0.12);
+  border-bottom: 1px solid var(--sage-deep);
+  position: relative;
+  z-index: 20;
 }
 
 .site-header .container {
@@ -114,7 +117,6 @@ button:focus-visible,
   justify-content: space-between;
   gap: 1rem;
   padding-block: 1rem;
-  flex-wrap: wrap;
 }
 
 .brand {
@@ -125,29 +127,16 @@ button:focus-visible,
   color: var(--green);
 }
 
+/* Logo has its own solid green background — contain it as a rounded
+   emblem so the background reads as intentional. */
 .brand__logo {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-}
-
-/* Text fallback shown if the logo image is missing */
-.brand__logo-fallback {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--green);
-  color: var(--peach);
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 1.35rem;
-  letter-spacing: 0.02em;
+  border: 2px solid var(--green);
+  box-shadow: 0 2px 8px rgba(55, 79, 47, 0.18);
 }
 
 .brand__text {
@@ -158,33 +147,49 @@ button:focus-visible,
 
 .brand__name {
   font-family: var(--font-head);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--green);
 }
 
 .brand__sub {
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--green);
-  opacity: 0.75;
+  opacity: 0.72;
+}
+
+/* Nav toggle (mobile hamburger) — hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor: pointer;
+  line-height: 0;
+  color: var(--green);
+}
+
+.nav-toggle svg {
+  display: block;
 }
 
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
 .site-nav a {
   text-decoration: none;
   color: var(--green);
-  font-weight: 500;
-  padding: 0.5rem 0.85rem;
-  border-radius: 8px;
-  transition: background 0.15s ease;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .site-nav a:hover {
@@ -202,34 +207,33 @@ button:focus-visible,
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
-  padding: 0.8rem 1.6rem;
+  padding: 0.85rem 1.7rem;
   border-radius: 999px;
-  border: 2px solid transparent;
+  border: 2px solid var(--green);
   cursor: pointer;
-  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.12s ease, background 0.15s ease, color 0.15s ease;
 }
 
 .btn--primary {
-  background: var(--peach);
-  color: var(--green);
-  box-shadow: 0 6px 16px rgba(243, 183, 161, 0.5);
+  background: var(--green);
+  color: var(--beige);
 }
 .btn--primary:hover {
-  background: var(--peach-dark);
+  background: var(--green-dark);
+  border-color: var(--green-dark);
   transform: translateY(-2px);
 }
 
 .btn--outline {
   background: transparent;
   color: var(--green);
-  border-color: var(--green);
 }
 .btn--outline:hover {
   background: var(--green);
-  color: var(--sage);
+  color: var(--beige);
   transform: translateY(-2px);
 }
 
@@ -237,31 +241,26 @@ button:focus-visible,
    Hero
    ============================================================ */
 .hero {
-  background: linear-gradient(180deg, var(--sage) 0%, var(--paper) 100%);
-  padding-block: clamp(3rem, 8vw, 5.5rem);
+  background: var(--sage);
+  padding-block: clamp(3rem, 8vw, 5rem);
+  border-bottom: 1px solid var(--sage-deep);
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
-  max-width: 18ch;
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+  max-width: 16ch;
 }
 
-.hero__lead {
-  margin-top: 1.25rem;
-  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
-  color: var(--ink);
-  max-width: 60ch;
-}
-
-.hero__actions {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.hero__tagline {
+  margin-top: 1rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  max-width: 52ch;
+  color: var(--green);
+  opacity: 0.9;
 }
 
 /* ============================================================
-   Sections & offer cards
+   Sections
    ============================================================ */
 .section {
   padding-block: clamp(2.5rem, 6vw, 4rem);
@@ -269,15 +268,50 @@ button:focus-visible,
 
 .section__title {
   font-size: clamp(1.7rem, 4vw, 2.4rem);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.section__intro {
-  color: var(--ink);
-  margin-bottom: 2rem;
-  font-size: 1.05rem;
+/* Welcome / prose intro */
+.prose p {
+  margin-bottom: 1.15rem;
+  font-size: 1.08rem;
 }
 
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose .lead {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.prose .emphasis {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-block: 1.75rem;
+}
+
+/* ============================================================
+   Treeline divider (subtle pine motif)
+   ============================================================ */
+.divider-trees {
+  color: var(--sage-deep);
+  line-height: 0;
+  padding-block: 0.5rem;
+}
+.divider-trees svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   Offer cards
+   ============================================================ */
 .offers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -285,8 +319,8 @@ button:focus-visible,
 }
 
 .card {
-  background: var(--sage-light);
-  border: 1px solid rgba(55, 79, 47, 0.12);
+  background: var(--sage);
+  border: 1px solid var(--sage-deep);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 2rem;
@@ -294,109 +328,65 @@ button:focus-visible,
   flex-direction: column;
 }
 
-.card__eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--green);
-  opacity: 0.8;
-  margin-bottom: 0.5rem;
-}
-
-.card__price {
+.card__badge {
   display: inline-block;
   align-self: flex-start;
-  background: var(--peach);
-  color: var(--green);
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.2rem 0.75rem;
+  background: var(--green);
+  color: var(--beige);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.85rem;
   border-radius: 999px;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.55rem;
+  margin-bottom: 0.85rem;
 }
 
 .card p {
-  color: var(--ink);
+  margin-bottom: 1.1rem;
+}
+
+.card p:last-of-type {
   flex-grow: 1;
 }
 
 .card__actions {
-  margin-top: 1.5rem;
-}
-
-.todo-note {
-  display: block;
-  margin-top: 0.75rem;
-  font-size: 0.8rem;
-  color: #8a5a3c;
-  background: #fbeee7;
-  border: 1px dashed var(--peach-dark);
-  border-radius: 8px;
-  padding: 0.4rem 0.65rem;
+  margin-top: 1.25rem;
 }
 
 /* ============================================================
-   About page — bio + contact
+   About page — bio prose + contact
    ============================================================ */
-.bio {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-.bio__photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-/* Placeholder box if headshot image is missing */
-.bio__photo-fallback {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
+.contact {
   background: var(--sage);
-  border: 2px dashed var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--green);
-  font-family: var(--font-head);
-  padding: 1rem;
+  border: 1px solid var(--sage-deep);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  margin-top: 1rem;
 }
 
-.bio-placeholder {
-  background: var(--sage-light);
-  border: 1px dashed rgba(55, 79, 47, 0.4);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  color: var(--green);
-  font-style: italic;
+.contact__intro {
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
 }
 
 .contact-list {
   list-style: none;
   display: grid;
   gap: 1rem;
-  margin-top: 1.5rem;
   max-width: 40rem;
 }
 
 .contact-list li {
-  background: var(--sage-light);
-  border: 1px solid rgba(55, 79, 47, 0.12);
-  border-radius: var(--radius);
+  background: var(--beige);
+  border: 1px solid var(--sage-deep);
+  border-radius: 12px;
   padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
@@ -404,95 +394,105 @@ button:focus-visible,
 }
 
 .contact-list .label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--green);
   opacity: 0.8;
 }
 
 .contact-list a {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
 }
 
 /* ============================================================
-   Footer
+   Footer (with subtle mountain/treeline motif)
    ============================================================ */
 .site-footer {
   background: var(--green);
   color: var(--sage);
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.footer__motif {
+  color: rgba(221, 230, 213, 0.16);
+  line-height: 0;
+}
+.footer__motif svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .site-footer .container {
-  padding-block: 2.5rem;
+  padding-block: 2rem 2.5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem 2.5rem;
-  align-items: center;
+  gap: 0.35rem 2.5rem;
+  align-items: baseline;
   justify-content: space-between;
 }
 
-.site-footer a {
-  color: var(--peach);
-  text-decoration: none;
-  font-weight: 500;
-}
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.footer__copy {
-  font-size: 0.85rem;
-  opacity: 0.85;
+.footer__copy,
+.footer__place {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* ============================================================
    Responsive
    ============================================================ */
-@media (max-width: 900px) {
-  .bio {
-    grid-template-columns: 220px 1fr;
-    gap: 1.75rem;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .offers {
     grid-template-columns: 1fr;
   }
-  .bio {
-    grid-template-columns: 1fr;
+
+  /* Collapse nav into hamburger */
+  .nav-toggle {
+    display: inline-flex;
   }
-  .bio__photo,
-  .bio__photo-fallback {
-    max-width: 320px;
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--sage);
+    border-bottom: 1px solid var(--sage-deep);
+    box-shadow: var(--shadow);
+    display: none;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+  }
+
+  .brand__name {
+    font-size: 1.15rem;
   }
 }
 
-@media (max-width: 560px) {
-  .site-header .container {
-    justify-content: center;
-    text-align: center;
-  }
-  .site-nav ul {
-    justify-content: center;
-  }
-  .brand__name {
-    font-size: 1.2rem;
+@media (max-width: 420px) {
+  .brand__sub {
+    display: none;
   }
   .site-footer .container {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
   }
 }
 

@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keep your Chi Up — With Jared Krupp</title>
-  <meta name="description" content="Holistic coaching with Jared Krupp, RN. Compassionate, direct support for lasting change — a free Skool community and 1-on-1 coaching." />
+  <title>Keep Your Chi Up with Jared Krupp</title>
+  <meta name="description" content="Keep Your Chi Up with Jared Krupp — RN turned holistic practitioner. A free Skool community and Embodied Autonomy, a 6-week course to become the driver of your own life and your own healer." />
 
-  <!-- Favicon (uses the logo graphic; falls back gracefully if not present) -->
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="icon" type="image/png" href="images/kycu-logo.png" />
 
-  <!-- Fonts: Inter for body (Optima for headings comes from the system stack in styles.css) -->
+  <!-- Fonts: Fraunces (headings) + Nunito Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -22,26 +21,35 @@
   <!-- ===================== Header / nav ===================== -->
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="index.html" aria-label="Keep your Chi Up — home">
-        <!-- Logo image; if assets/logo.png is missing, the text fallback shows instead -->
+      <a class="brand" href="index.html" aria-label="Keep Your Chi Up — home">
         <img
           class="brand__logo"
-          src="assets/logo.png"
-          alt="Keep your Chi Up logo — a yin-yang inside a sunburst"
-          width="60" height="60"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          src="images/kycu-logo.png"
+          alt="Keep Your Chi Up emblem — a yin-yang sun"
+          width="58" height="58"
         />
-        <span class="brand__logo-fallback" style="display:none;" aria-hidden="true">KYC</span>
         <span class="brand__text">
-          <span class="brand__name">Keep your Chi Up</span>
+          <span class="brand__name">Keep Your Chi Up</span>
           <span class="brand__sub">With Jared Krupp</span>
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="8" x2="22" y2="8" />
+          <line x1="4" y1="13" x2="22" y2="13" />
+          <line x1="4" y1="18" x2="22" y2="18" />
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="about.html">About / Contact</a></li>
+          <li><a href="about.html">About &amp; Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -51,68 +59,124 @@
     <!-- ===================== Hero ===================== -->
     <section class="hero">
       <div class="container">
-        <h1>Real change starts when you stop outsourcing your health.</h1>
-        <p class="hero__lead">
-          I'm Jared Krupp — a registered nurse and holistic practitioner. I've
-          watched the conventional system manage people's symptoms while their
-          lives quietly fall apart. I honor everything you've carried to get
-          here. And I'll tell you the truth: the power to change is already
-          yours. My work is helping you use it.
+        <h1>Keep Your Chi Up with Jared Krupp</h1>
+        <p class="hero__tagline">
+          Returning to nature — and to yourself — as the path to becoming the
+          happiest, healthiest, most whole version of who you already are.
         </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#embodied-autonomy">Work with me</a>
-          <a class="btn btn--outline" href="#community">Start free</a>
-        </div>
       </div>
     </section>
+
+    <!-- ===================== Welcome / intro ===================== -->
+    <section class="section" aria-labelledby="welcome-heading">
+      <div class="container prose">
+        <h2 class="section__title" id="welcome-heading">Welcome</h2>
+        <p class="lead">Thank you for sharing your time and attention to be here.</p>
+        <p>
+          I have been on a journey towards embodying the happiest, healthiest,
+          most whole version of myself for the greater part of 9 years now.
+        </p>
+        <p>
+          I've tried all of the supplements, all the "biohacks" and all of the
+          self help advice. I've spent thousands of dollars on my own education
+          and countless hours reading, studying and implementing.
+        </p>
+        <p>
+          And while these financial and time investments have completely changed
+          my life for the better, I didn't feel complete just keeping all of the
+          knowledge I have gained just for myself.
+        </p>
+        <p>
+          That is why I created <em>Keep Your Chi Up</em>.
+        </p>
+        <p>
+          To have a place where I can take all of the fruits that I have been
+          able to bear from years of dedication to this process and share them
+          with others who are also seeking to become the best version of
+          themselves in this lifetime.
+        </p>
+        <p>
+          I have a number of options for people who are seeking to reap some of
+          the same benefits in their own life that I have in mine — to get to a
+          place where you feel like you're the driver of your own life and have
+          the tools and frameworks to be your own healer.
+        </p>
+        <p class="emphasis">Because no one is coming to save us.</p>
+        <p>
+          It is up to every individual to take responsibility over the life we
+          are creating moment to moment in order to embody the best version of
+          ourselves and to live in alignment with what we want and need
+          physically, mentally, emotionally and spiritually.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== Treeline divider ===================== -->
+    <div class="divider-trees container" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="0" y1="55" x2="1200" y2="55" />
+        <!-- simple pine silhouettes along a baseline -->
+        <path d="M90 55 L110 15 L130 55 M100 40 L110 30 L120 40 M110 15 L110 55" />
+        <path d="M300 55 L318 22 L336 55 M308 42 L318 33 L328 42 M318 22 L318 55" />
+        <path d="M600 55 L622 10 L644 55 M610 38 L622 26 L634 38 M622 10 L622 55" />
+        <path d="M880 55 L898 24 L916 55 M888 43 L898 34 L908 43 M898 24 L898 55" />
+        <path d="M1080 55 L1100 18 L1120 55 M1090 40 L1100 30 L1110 40 M1100 18 L1100 55" />
+      </svg>
+    </div>
 
     <!-- ===================== Offers ===================== -->
     <section class="section" aria-labelledby="offers-heading">
       <div class="container">
         <h2 class="section__title" id="offers-heading">Two ways to begin</h2>
-        <p class="section__intro">
-          Start where you are. Go as deep as you're ready to go.
-        </p>
 
         <div class="offers">
-          <!-- Offer 1: Free Skool community -->
-          <article class="card" id="community">
-            <span class="card__eyebrow">Community</span>
-            <span class="card__price">Free</span>
-            <h3>Keep Your Chi Up Skool Community</h3>
+          <!-- Offer 1: Free Skool group -->
+          <article class="card">
+            <span class="card__badge">Free</span>
+            <h3>Keep Your Chi Up Skool Group</h3>
             <p>
-              This is the front door. A free space to get familiar with how I
-              think, how I work, and what a genuinely holistic approach asks of
-              you. No pressure, no pitch — just a place to start paying attention
-              to your own health before you commit to anything deeper.
+              A free resource for individuals to go through on your own time.
+              Videos covering the basics such as the <em>6 Foundational
+              Principles</em> and <em>The 4 Doctors</em>, workshops diving into
+              alternative healing, guest masterclass recordings and so much more.
+            </p>
+            <p>
+              The beauty of this space is that you will also be instantly
+              connected to other like minded individuals who are also seeking to
+              become the happiest, healthiest, most whole version of themselves.
+              This is a space to connect with these people so we can all learn
+              from each other and develop authentic, lasting connections.
             </p>
             <div class="card__actions">
-              <!-- TODO(Jared): replace href="#" with the real Skool community URL -->
-              <a class="btn btn--primary" href="#" aria-describedby="skool-todo">
-                Join the community
+              <a class="btn btn--primary" href="https://www.skool.com/keep-your-chi-up-9527/about">
+                Join Today!
               </a>
-              <small class="todo-note" id="skool-todo">
-                TODO: Jared — paste the real Skool URL here (currently links to “#”).
-              </small>
             </div>
           </article>
 
-          <!-- Offer 2: Embodied Autonomy (paid 1-on-1) -->
-          <article class="card" id="embodied-autonomy">
-            <span class="card__eyebrow">1-on-1 Coaching</span>
-            <span class="card__price">6-week container</span>
+          <!-- Offer 2: Embodied Autonomy -->
+          <article class="card">
+            <span class="card__badge">6-Week Course</span>
             <h3>Embodied Autonomy</h3>
             <p>
-              A focused, one-on-one, six-week coaching container. This is where
-              we do the honest work — together, at a high standard, without
-              beating around the bush. It's for the person who is done waiting to
-              be rescued and ready to take real ownership of their health and
-              their life.
+              A 6 week course where you work with me directly to start feeling
+              like the creator of your own life rather than the character of
+              someone else's.
+            </p>
+            <p>
+              We will dive into some of the most potent learnings that have made
+              all the difference for me in my life, and explore how you can apply
+              them in your own so you will <em>actually</em> start to see real,
+              meaningful change. Not just hoping for it anymore.
+            </p>
+            <p>
+              Weekly calls, constant support throughout the class and an intimate
+              environment where we can really dive deep into your unique situation
+              and circumstances.
             </p>
             <div class="card__actions">
-              <a class="btn btn--primary"
-                 href="https://buy.stripe.com/6oU00j5HO4xr3jl9XQ3ks00">
-                Work with me
+              <a class="btn btn--outline" href="mailto:jaredmkrupp@gmail.com">
+                Let's Dive Deep
               </a>
             </div>
           </article>
@@ -123,13 +187,30 @@
 
   <!-- ===================== Footer ===================== -->
   <footer class="site-footer">
+    <div class="footer__motif" aria-hidden="true">
+      <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- subtle mountain range line -->
+        <path d="M0 70 L180 28 L320 58 L520 14 L700 52 L900 22 L1080 56 L1200 30 L1200 70 Z" />
+      </svg>
+    </div>
     <div class="container">
-      <nav class="footer__links" aria-label="Contact">
-        <a href="mailto:Jaredmkrupp@gmail.com">Jaredmkrupp@gmail.com</a>
-        <a href="https://instagram.com/Jared_krupp">Instagram @Jared_krupp</a>
-      </nav>
-      <p class="footer__copy">© 2026 Keep your Chi Up · With Jared Krupp</p>
+      <p class="footer__copy">Jared Krupp 2026. All Rights Reserved</p>
+      <p class="footer__place">Based in Dayton, Ohio</p>
     </div>
   </footer>
+
+  <!-- Tiny vanilla-JS mobile nav toggle -->
+  <script>
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("primary-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      });
+    })();
+  </script>
 </body>
 </html>
