@@ -8,12 +8,27 @@ Guidance for Claude Code (claude.ai/code) working in this repository.
 practice. Two pages today: `index.html` (home) and `about.html` (about +
 contact). `styles.css` is the only stylesheet.
 
-Live at **https://www.jaredkrupp.com/**. The repo auto-deploys to Vercel on
+Live at **https://jaredkrupp.com/**. The repo auto-deploys to Vercel on
 every push to `main` — committing and pushing *is* deploying.
+
+**Canonical hostname is the bare `jaredkrupp.com` (no `www`).** Use it in every
+absolute URL — canonical tags, Open Graph/Twitter tags, `sitemap.xml`,
+`robots.txt`. Never mix in `www.jaredkrupp.com`. (The `www.` host must
+301-redirect to the bare domain in Vercel's domain settings.)
 
 `vercel.json` sets `cleanUrls: true`, so pages are reached without the `.html`
 extension (`/about`, `/thank-you`). Every new page and every internal link must
 follow that convention.
+
+## SEO
+
+- Each indexable page has a unique `<title>`, a `<meta name="description">`, and
+  a `<link rel="canonical">` pointing at its bare-domain URL.
+- `robots.txt` allows all crawling and points to `sitemap.xml`.
+- `sitemap.xml` lists only indexable pages (currently `/` and `/about`).
+- Keep non-indexable pages out of the sitemap and give them
+  `<meta name="robots" content="noindex">` — as `404.html` already does. Any
+  future `thank-you` page should be noindexed and left out of the sitemap too.
 
 ## Brand voice
 
