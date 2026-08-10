@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Keep Your Chi Up</title>
+  <meta name="description" content="This page doesn't exist — head back to Keep Your Chi Up with Jared Krupp." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/png" href="images/kycu-logo.png" />
+
+  <!-- Fonts: Fraunces (headings) + Nunito Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header / nav ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="Keep Your Chi Up — home">
+        <img
+          class="brand__logo"
+          src="images/kycu-logo.png"
+          alt="Keep Your Chi Up emblem — a yin-yang sun"
+          width="58" height="58"
+        />
+        <span class="brand__text">
+          <span class="brand__name">Keep Your Chi Up</span>
+          <span class="brand__sub">With Jared Krupp</span>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="8" x2="22" y2="8" />
+          <line x1="4" y1="13" x2="22" y2="13" />
+          <line x1="4" y1="18" x2="22" y2="18" />
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About &amp; Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== 404 ===================== -->
+    <section class="hero" aria-labelledby="notfound-heading">
+      <div class="container">
+        <h1 id="notfound-heading">Looks like you've wandered off the trail.</h1>
+        <p class="hero__tagline">
+          This page doesn't exist — but the way back to solid ground is one
+          click away.
+        </p>
+        <div class="card__actions">
+          <a class="btn btn--primary" href="/">Return home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="footer__motif" aria-hidden="true">
+      <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- subtle mountain range line -->
+        <path d="M0 70 L180 28 L320 58 L520 14 L700 52 L900 22 L1080 56 L1200 30 L1200 70 Z" />
+      </svg>
+    </div>
+    <div class="container">
+      <p class="footer__copy">Jared Krupp 2026. All Rights Reserved</p>
+      <p class="footer__place">Based in Dayton, Ohio</p>
+    </div>
+  </footer>
+
+  <!-- Tiny vanilla-JS mobile nav toggle -->
+  <script>
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("primary-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      });
+    })();
+  </script>
+</body>
+</html>
