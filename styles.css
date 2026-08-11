@@ -247,12 +247,12 @@ button:focus-visible,
   background-image:
     linear-gradient(
       to bottom,
-      rgba(41, 57, 31, 0.55),
-      rgba(41, 57, 31, 0.78)
+      rgba(41, 57, 31, 0.5),
+      rgba(41, 57, 31, 0.72)
     ),
-    url("images/forest-river.jpg");
+    url("images/sun.jpg");
   background-size: cover;
-  background-position: center 42%;
+  background-position: center 40%;
   background-repeat: no-repeat;
 }
 
