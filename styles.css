@@ -252,8 +252,18 @@ button:focus-visible,
     ),
     url("images/sun.jpg");
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 50%;
   background-repeat: no-repeat;
+}
+
+/* On wider screens, give the portrait image more room so it reads
+   less cropped, and let the content sit centered over the sun. */
+@media (min-width: 761px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: clamp(30rem, 60vh, 42rem);
+  }
 }
 
 .hero h1 {
