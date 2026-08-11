@@ -294,6 +294,12 @@ button:focus-visible,
   margin-bottom: 1.25rem;
 }
 
+/* A long title that should stay on one line on wider screens
+   (wraps gracefully on narrow screens). */
+.section__title--fit {
+  font-size: clamp(1.25rem, 3.05vw, 1.9rem);
+}
+
 /* Welcome / prose intro */
 .prose p {
   margin-bottom: 1.15rem;
