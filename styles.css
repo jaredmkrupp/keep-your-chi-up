@@ -300,6 +300,42 @@ button:focus-visible,
   font-size: 1.08rem;
 }
 
+/* About page: story text with a photo alongside it */
+.about-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.about-photo {
+  margin: 0;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--sage-deep);
+  box-shadow: 0 6px 20px rgba(41, 57, 31, 0.14);
+}
+
+@media (min-width: 761px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 23rem);
+    gap: clamp(2rem, 4vw, 3.25rem);
+    align-items: start;
+  }
+  /* Photo comes first in the source (so it sits up top on mobile),
+     but on desktop it belongs in the right-hand column. */
+  .about-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about-photo {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
 .prose p:last-child {
   margin-bottom: 0;
 }
