@@ -62,8 +62,10 @@ Fonts (Google Fonts, loaded in each page's `<head>`):
 - **Fraunces** — headings (`--font-head`)
 - **Nunito Sans** — body (`--font-body`)
 
-Nature motifs are inline SVG line work only — pine treelines, footer mountain
-range. No photographs.
+Nature motifs are inline SVG line work — pine treelines, footer mountain
+range. Photographic imagery is also allowed throughout the site when Jared
+provides an image (e.g. the forest-river hero background), typically dimmed
+under a green overlay with white text for legibility.
 
 ## Rules for every change
 
